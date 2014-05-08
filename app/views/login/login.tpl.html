@@ -1,0 +1,32 @@
+
+<div id="container">
+  <div id="logo"><img src="images/logo.png"/></div>
+  <div id="user">
+    <div class="avatar">
+      <div class="inner"></div><img src="images/demo/avi_1"/>
+    </div>
+    <div class="text">
+      <h4>Hola usuario logueado!</h4>
+    </div>
+  </div>
+  <div id="loginbox">
+    <form id="loginform" ng-submit="">
+      <p>Ingresa tu usuario y contraseña para continuar.</p>
+      <div class="input-group input-sm"><span class="input-group-addon"><i class="fa fa-user"></i></span>
+        <input id="username" type="text" placeholder="Usuario" class="form-control"/>
+      </div>
+      <div class="input-group"><span class="input-group-addon"><i class="fa fa-lock"></i></span>
+        <input id="password" type="password" placeholder="Contraseña" class="form-control"/>
+      </div>
+      <div class="form-actions clearfix">
+        <div class="pull-left"><a ng-href="" class="flip-link to-register blue">Crear cuenta nueva</a></div>
+        <div class="pull-right"><a ng-href="" class="flip-link to-recover grey">¿Olvidaste tu contraseña?</a></div>
+        <input type="submit" value="Entrar" class="btn btn-block btn-primary btn-default"/>
+      </div>
+      <div class="footer-login">
+        <div class="pull-left text">Ingresa con</div>
+        <div class="pull-right btn-social"><a class="btn btn-facebook"><i class="fa fa-facebook"></i></a><a class="btn btn-twitter"><i class="fa fa-twitter"></i></a><a class="btn btn-google-plus"><i class="fa fa-google-plus"></i></a></div>
+      </div>
+    </form>
+  </div>
+</div>

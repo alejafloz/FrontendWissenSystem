@@ -39,6 +39,10 @@ module.exports = function (grunt) {
         files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
         tasks: ['compass:server', 'autoprefixer']
       },
+      jade: {
+        files: ['<%= yeoman.app %>/views/{,*/}*.jade'],
+        tasks: ['jade']
+      },
       gruntfile: {
         files: ['Gruntfile.js']
       },
@@ -47,7 +51,7 @@ module.exports = function (grunt) {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '<%= yeoman.app %>/{,*/}*.html',
+          '.tmp/views/{,*/}*.html',
           '.tmp/styles/{,*/}*.css',
           '.tmp/scripts/{,*/}*.js',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
@@ -286,6 +290,37 @@ module.exports = function (grunt) {
       }
     },
 
+
+
+    // Compilar archivos Jade
+    jade: {
+      // Move the compiled .html files from .tmp/ to dist/
+      dist: {
+        files: [{
+            expand: true,
+            cwd: '.tmp/',
+            src: ['views/{,*/}*.html'], // Actual pattern(s) to match.
+            dest: '<%= yeoman.dist %>'
+        }]
+      },
+      // Compile .jade files in app/views/ to .tmp/
+      compile: {
+        options: {
+            pretty: true,
+            data: {
+                debug: false
+            }
+        },
+        files: [{
+            expand: true, // Enable dynamic expansion.
+            cwd: '<%= yeoman.app %>/views/', // Src matches are relative to this path.
+            src: '{,*/}*.jade', // Actual pattern(s) to match.
+            dest: '<%= yeoman.app %>/views', // Destination path prefix.
+            ext: '.tpl.html' // Dest filepaths will have this extension.
+        }]
+      }
+    },
+
     // Copies remaining files to places other tasks can use
     copy: {
       dist: {
@@ -322,15 +357,18 @@ module.exports = function (grunt) {
     concurrent: {
       server: [
         'coffee:dist',
-        'compass:server'
+        'compass:server',
+        'jade'
       ],
       test: [
         'coffee',
-        'compass'
+        'compass',
+        'jade'
       ],
       dist: [
         'coffee',
         'compass:dist',
+        'jade',
         'imagemin',
         'svgmin'
       ]
@@ -400,6 +438,7 @@ module.exports = function (grunt) {
     'karma'
   ]);
 
+ 
   grunt.registerTask('build', [
     'clean:dist',
     'bower-install',

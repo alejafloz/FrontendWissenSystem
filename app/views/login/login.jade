@@ -1,0 +1,44 @@
+#container
+	#logo
+		img(src="images/logo.png")
+	#user
+		.avatar
+			.inner
+			img(src="images/demo/avi_1")
+		.text
+			h4 Hola usuario logueado!
+
+	#loginbox
+		form#loginform(ng-submit="")
+			p Ingresa tu usuario y contraseña para continuar.
+			.input-group.input-sm
+				span.input-group-addon
+					i.fa.fa-user
+				input#username.form-control(type="text", placeholder="Usuario")
+			.input-group
+				span.input-group-addon
+					i.fa.fa-lock
+				input#password.form-control(type="password", placeholder="Contraseña")
+			.form-actions.clearfix
+				.pull-left
+					a.flip-link.to-register.blue(ng-href="")
+						|Crear cuenta nueva
+				.pull-right
+					a.flip-link.to-recover.grey(ng-href="")
+						|¿Olvidaste tu contraseña?
+				input.btn.btn-block.btn-primary.btn-default(type="submit", value="Entrar")
+			.footer-login
+				.pull-left.text
+					|Ingresa con
+				.pull-right.btn-social
+					a.btn.btn-facebook
+						i.fa.fa-facebook
+					a.btn.btn-twitter
+						i.fa.fa-twitter
+					a.btn.btn-google-plus
+						i.fa.fa-google-plus
+
+
+
+
+

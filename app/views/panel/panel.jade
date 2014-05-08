@@ -1,0 +1,116 @@
+#header
+	h1
+		a.
+			Wissen System
+	a#menu-trigger
+		i.fa.fa-bars
+
+#user-nav
+	ul.btn-group
+		li.btn
+			a
+				i.fa.fa-user
+				span.text.
+					Perfil
+		li#menu-messages.btn.dropdown
+			a.dropdown-toggle(data-toggle="dropdown", data-target="#menu-messages")
+				i.fa.fa-envelope
+				span.text Mensajes
+				span.label.label-danger 5
+				b.caret
+			ul.dropdown-menu.messages-menu
+				li.title
+					i.fa.fa-envelope-alt
+					|Mensajes
+					a.title-btn(title="Escribe un nuevo mensaje")
+						i.fa.fa-share
+				li.message-item(ng-repeat="(key, mensaje) in Mensajes")
+					a
+						img(src="images/users/{{mensaje.img}}")
+						.message-content
+							span.message-time. {{mensaje.created_at}}
+							span.message-sender. {{mensaje.user_from}}
+							span.message {{mensaje.msg}}
+		li.btn
+			a
+				i.fa.fa-cog
+				span.text Settings
+		li.btn
+			a
+				i.fa.fa-share
+				span.text Salir
+
+#sidebar
+	#search
+		input(type="text", placeholder="Busque aquí...")
+		button.tip-right(type="submit", title="", data-original-title="Search")
+			i.fa.fa-search
+	ul(style="display: block;")
+		li.active
+			a
+				i.fa.fa-home
+				span Home
+		li.submenu
+			a
+				i.fa.fa-flag
+				span Idioma
+				i.arrow.fa.fa-chevron-right
+			ul
+				li
+					a Español
+				li
+					a Inglés
+				li
+					a Francés
+		li.submenu
+			a
+				i.fa.fa-question
+				span Preguntas
+			ul
+				li
+					a Editar
+				li
+					a Asignar
+		li
+			a
+				i.fa.fa-users
+				span Usuarios
+		li
+			a
+				i.fa.fa-signal
+				span Resultados
+#content
+	#content-header.mini
+		h1 Panel de control
+	#breadcrumb
+		a.tip-bottom(data-original-title="Ir al inicio")
+			i.fa.fa-home
+			|Home
+		a.current Panel de control
+	.container-fluid
+		.row
+			.col-xs-12.center
+				ul.quick-actions
+					li
+						a
+							i.icon-cal
+							|Eventos
+					li
+						a
+							i.icon-shopping-bag
+							|Contabilidad
+
+		.row
+			.col-xs-12
+				.alert.alert-info
+					|Bienvenido a Wissen System, esperamos sea de tu agrado.
+
+
+
+.row
+	#footer.col-xs-12 2014 - 2015 © powered by BlueSky
+
+
+
+
+

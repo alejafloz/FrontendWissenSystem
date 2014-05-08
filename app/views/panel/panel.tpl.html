@@ -1,0 +1,66 @@
+
+<div id="header">
+  <h1><a>Wissen System</a></h1><a id="menu-trigger"><i class="fa fa-bars"></i></a>
+</div>
+<div id="user-nav">
+  <ul class="btn-group">
+    <li class="btn"><a><i class="fa fa-user"></i><span class="text">Perfil</span></a></li>
+    <li id="menu-messages" class="btn dropdown"><a data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="fa fa-envelope"></i><span class="text">Mensajes</span><span class="label label-danger">5</span><b class="caret"></b></a>
+      <ul class="dropdown-menu messages-menu">
+        <li class="title"><i class="fa fa-envelope-alt"></i>Mensajes<a title="Escribe un nuevo mensaje" class="title-btn"><i class="fa fa-share"></i></a></li>
+        <li ng-repeat="(key, mensaje) in Mensajes" class="message-item"><a><img src="images/users/{{mensaje.img}}"/>
+            <div class="message-content"><span class="message-time">{{mensaje.created_at}}</span><span class="message-sender">{{mensaje.user_from}}</span><span class="message">{{mensaje.msg}}</span></div></a></li>
+      </ul>
+    </li>
+    <li class="btn"><a><i class="fa fa-cog"></i><span class="text">Settings</span></a></li>
+    <li class="btn"><a><i class="fa fa-share"></i><span class="text">Salir</span></a></li>
+  </ul>
+</div>
+<div id="sidebar">
+  <div id="search">
+    <input type="text" placeholder="Busque aquí..."/>
+    <button type="submit" title="" data-original-title="Search" class="tip-right"><i class="fa fa-search"></i></button>
+  </div>
+  <ul style="display: block;">
+    <li class="active"><a><i class="fa fa-home"></i><span>Home</span></a></li>
+    <li class="submenu"><a><i class="fa fa-flag"></i><span>Idioma</span><i class="arrow fa fa-chevron-right"></i></a>
+      <ul>
+        <li><a>Español</a></li>
+        <li><a>Inglés</a></li>
+        <li><a>Francés</a></li>
+      </ul>
+    </li>
+    <li class="submenu"><a><i class="fa fa-question"></i><span>Preguntas</span></a>
+      <ul>
+        <li><a>Editar</a></li>
+        <li><a>Asignar</a></li>
+      </ul>
+    </li>
+    <li><a><i class="fa fa-users"></i><span>Usuarios</span></a></li>
+    <li><a><i class="fa fa-signal"></i><span>Resultados</span></a></li>
+  </ul>
+</div>
+<div id="content">
+  <div id="content-header" class="mini">
+    <h1>Panel de control</h1>
+  </div>
+  <div id="breadcrumb"><a data-original-title="Ir al inicio" class="tip-bottom"><i class="fa fa-home"></i>Home</a><a class="current">Panel de control</a></div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 center">
+        <ul class="quick-actions">
+          <li><a><i class="icon-cal"></i>Eventos</a></li>
+          <li><a><i class="icon-shopping-bag"></i>Contabilidad</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="alert alert-info">Bienvenido a Wissen System, esperamos sea de tu agrado.</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div id="footer" class="col-xs-12">2014 - 2015 © powered by BlueSky</div>
+</div>
